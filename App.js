@@ -1,19 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+
+import { Provider } from "./src/context/AppContext";
+import LoginScreen from "./src/screens/LoginScreen";
+import WelcomeScreen from "./src/screens/WelcomeScreen";
 
 export default function App() {
+  const [user, setUser] = useState();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Provider value={[user, setUser]}>
+      {user ? <WelcomeScreen /> : <LoginScreen />}
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
