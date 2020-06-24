@@ -10,13 +10,7 @@ function WelcomeScreen(props) {
     <View style={styles.container}>
       <Image
         source={user.photoUrl && { uri: user.photoUrl }}
-        style={{
-          width: 200,
-          height: 200,
-          borderRadius: 100,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        style={styles.image}
         PlaceholderContent={
           <Avatar icon={{ name: "user", type: "font-awesome" }} size={200} />
         }
@@ -39,6 +33,13 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",
   },

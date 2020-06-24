@@ -8,7 +8,7 @@ export default function App() {
   const [user, setUser] = useState();
   return (
     <Provider value={[user, setUser]}>
-      {user ? <WelcomeScreen /> : <LoginScreen />}
+      {!user ? <LoginScreen /> : <WelcomeScreen />}
     </Provider>
   );
 }
