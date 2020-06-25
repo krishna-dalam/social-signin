@@ -12,7 +12,7 @@ function LoginScreen(props) {
   const facebookSignIn = async () => {
     setLoading(true);
     try {
-      await Facebook.initializeAsync("2638491649759749");
+      await Facebook.initializeAsync("<FACEBOOK_APP_ID>");
       const result = await Facebook.logInWithReadPermissionsAsync({
         permissions: ["public_profile"],
       });
@@ -43,8 +43,7 @@ function LoginScreen(props) {
     setLoading(true);
     try {
       const result = await Google.logInAsync({
-        androidClientId:
-          "387054938539-6ro6ts4p3beeo4iundr6l1qssvskbq96.apps.googleusercontent.com",
+        androidClientId: "<GOOGLE_CLIENT_ID>",
         scopes: ["profile"],
       });
 
